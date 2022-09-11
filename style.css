@@ -1,0 +1,10 @@
+*{
+    background-color: #faf9f5;
+}
+
+#header{
+   text-align: center; 
+   font-size: xx-large;
+   margin-bottom: 75px;
+   border-bottom:  solid black;
+}
