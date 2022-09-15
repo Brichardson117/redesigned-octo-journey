@@ -79,7 +79,27 @@ function displayWeather(data, name) {
     windSpeed.textContent = `Windspeed: ${data.current.wind_speed}/mph`
     
     for(let i = 0; i < data.daily.length; i++){
-      console.log(data.daily[i].temp.day)
+
+      let dailyName = document.createElement('h2')
+      dailyName.textContent = name 
+
+      let dailyTemp = document.createElement('li');
+      dailyTemp.textContent = `Temp: ${data.daily[i].temp.day} °F`
+
+      let dailyImg = document.createElement('img');
+      dailyImg.src = `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png`
+
+      let dailyHumidity = document.createElement('p');
+      dailyHumidity.textContent = ` Humidity: ${data.daily[i].humidity}%`
+
+      let dailyUV = document.createElement('p');
+      dailyUV.textContent = `UV Index: ${data.daily[i].uvi}`
+
+      let dailyWindspeed = document.createElement('p');
+      dailyWindspeed.textContent = `Windspeed: ${data.daily[i].wind_speed}/mph`
+      
+
+      document.querySelector('#dailyForecast').append(dailyName,dailyTemp, dailyImg, dailyHumidity, dailyUV, dailyWindspeed);
     }
 
     //append created elements to html 
