@@ -11,10 +11,12 @@ let searchLocationHandler = function (event) {
     getWeatherRepo(city);
     cityNameEl.value = " ";
   } else {
-    alert("Please enter valid Location.");
+    wiindow.alert("Please enter valid Location.");
   }
+  
 };
 
+//function fot the api call to get the weather for users given location
 let getWeatherRepo = function (lat, lon, name) {
   let weatherApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=9d0b4962f3190a47703e718c0e6b86a0`;
   fetch(weatherApi).then(function (respone) {
@@ -29,6 +31,7 @@ let getWeatherRepo = function (lat, lon, name) {
   });
 };
 
+//function for api call to get lat, log, and data from users given location
 function apiCall() {
   const cityInputEl = document.querySelector("#citySearch");
   const baseUrl =
@@ -49,37 +52,42 @@ function displayWeather(data, name) {
     //create element for city name and assign text content and class element
     let cityName = document.createElement('h2');
     cityName.textContent = name;
-    cityName.classList = 'uk-card-title'
+    // cityName.classList = 'mb-0'
 
     //create element for temperate and assign text content and class element
     let temperature = document.createElement('p');
     temperature.textContent = `Temp: ${data.current.temp} °F`;
-    temperature.classList = 'uk-card-body'
+    // temperature.classList = 'display-2 my-3'
 
     //create element for weather imageand assign text content and class element
     let weatherImg = document.createElement('img');
     weatherImg.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`
-    weatherImg.classList = 'uk-card-media-top'
+    weatherImg.classList = 'width:100%'
+    weatherImg.alt = 'weather image'
 
     //create element for humidity and assign text content and class element
     let humidity = document.createElement('p')
     humidity.textContent = `Humidity: ${data.current.humidity}%`
-    humidity.classList = 'uk-card-body'
+    // humidity.classList = 'mb-2'
 
     //create element for uv and assign text content and class element
     let uv = document.createElement('p')
     uv.textContent = `Uv Index: ${data.current.uvi}`;
-    uv.classList = 'uk-card-body'
 
     //create element for wind speen and assign text content and class element
     let windSpeed = document.createElement('p');
-    windSpeed.textContent = `Windspeed: ${data.current.wind_speed}`
-    windSpeed.classList = 'uk-card-body'
+    windSpeed.textContent = `Windspeed: ${data.current.wind_speed}/mph`
+    
+    let forecastTemp = document.createElement('p')
+    forecastTemp.textContent = `Temp: ${data.daily[1].temp.day}`
 
     //append created elements to html 
-    document.querySelector('#displayWeather').append(weatherImg, cityName, temperature, humidity, uv, windSpeed)
+    document.querySelector('#displayWeather').append(weatherImg, cityName, temperature, humidity, uv, windSpeed, forecastTemp)
+
+   
 }
 
 
-//when user clicks find button, run apiCall function
+
+//event listener, runs function apiCall on 'click'
 searchBtn.addEventListener("click", apiCall);

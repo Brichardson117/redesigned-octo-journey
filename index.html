@@ -10,37 +10,41 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/css/uikit.min.css"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Antonio&display=swap"
       rel="stylesheet"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+  rel="stylesheet"
+/>
     <link rel="stylesheet" href="./style.css" />
     <title>Weather App</title>
   </head>
   <body>
-    <h1 id="header">Weather App</h1>
-    <div>
-      <div"></div>
-      <h2>Search For A City:</h2>
+    <h1 id="header">Weather App
+    <input id="citySearch" name="state" type="text" autofocus="true" /> 
+       <div class="d-grid gap-2 col-2 ">
+        <button type="button" id="btn" class="btn btn-outline-primary">Find</button>
+      </div>
+    </h1>
 
-      <label for="Location">Location:</label>
-      <input id="citySearch" name="state" type="text" autofocus="true" />
-      <button type="button" id="btn" class="btn btn-outline-primary">Find</button>
-    </div>
-    <div>
-      <h3 class="mx-auto col">Recent searches</h3>
-    </div>
-
-    <div id="weatherforecast" class="uk-child-width-1-2@m" uk-grid>
+    <div id="weatherforecast" >
       <h2><strong>Weather Forecast:</strong></h2>
-      <div id="displayWeather" class="uk-card uk-card-default"></div>
+      <div class="card"> 
+        <section class="container">
+         <div id="displayWeather"></div>
+       </section>
+      </div>
+     
     </div>
+    
     <script src="./script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
@@ -49,5 +53,9 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit-icons.min.js"></script>
+    <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
+></script>
   </body>
 </html>
