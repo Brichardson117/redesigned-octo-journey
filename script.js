@@ -78,11 +78,12 @@ function displayWeather(data, name) {
     let windSpeed = document.createElement('p');
     windSpeed.textContent = `Windspeed: ${data.current.wind_speed}/mph`
     
-    let forecastTemp = document.createElement('p')
-    forecastTemp.textContent = `Temp: ${data.daily[1].temp.day}`
+    for(let i = 0; i < data.daily.length; i++){
+      console.log(data.daily[i].temp.day)
+    }
 
     //append created elements to html 
-    document.querySelector('#displayWeather').append(weatherImg, cityName, temperature, humidity, uv, windSpeed, forecastTemp)
+    document.querySelector('#displayWeather').append(weatherImg, cityName, temperature, humidity, uv, windSpeed)
 
    
 }
