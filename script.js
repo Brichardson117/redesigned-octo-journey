@@ -80,10 +80,14 @@ function displayWeather(data, name) {
     
     for(let i = 0; i < data.daily.length; i++){
 
+      let forecastCard = document.createElement('div')
+      forecastCard.classList = 'card'
+
       let dailyName = document.createElement('h2')
       dailyName.textContent = name 
+      // dailyName.classList = 'card'
 
-      let dailyTemp = document.createElement('li');
+      let dailyTemp = document.createElement('p');
       dailyTemp.textContent = `Temp: ${data.daily[i].temp.day} °F`
 
       let dailyImg = document.createElement('img');
@@ -97,9 +101,10 @@ function displayWeather(data, name) {
 
       let dailyWindspeed = document.createElement('p');
       dailyWindspeed.textContent = `Windspeed: ${data.daily[i].wind_speed}/mph`
-      
 
-      document.querySelector('#dailyForecast').append(dailyName,dailyTemp, dailyImg, dailyHumidity, dailyUV, dailyWindspeed);
+      forecastCard.append(dailyName, dailyImg, dailyTemp, dailyHumidity, dailyUV, dailyWindspeed)
+
+      document.querySelector('#dailyForecast').append(forecastCard);
     }
 
     //append created elements to html 
