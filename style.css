@@ -1,5 +1,7 @@
 * body{
   background-color: #faf9f5;
+  font-size: larger;
+  text-align: center;
 }
 
 #header {
@@ -8,14 +10,29 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+.primarySection {
+  text-align: center;
+  padding: 5px;
+}
+
+.secondarySection{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 15px;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
   transition: 0.3s;
   width: 40%;
+  padding: 20px;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,5);
 }
 
 input {
@@ -32,6 +49,18 @@ input {
   padding: 2px 16px;
 }
 
-.search {
- padding: 3px 15px;
+#primaryCard{
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.secondaryCard{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+  transition: 0.3s;
+  padding: 40px 10%;
+  border-radius: 20px;
+  position: initial;
+  border: 3px solid green;
 }

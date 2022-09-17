@@ -81,7 +81,7 @@ function displayWeather(data, name) {
     for(let i = 0; i < data.daily.length; i++){
 
       let forecastCard = document.createElement('div')
-      forecastCard.classList = 'card'
+      forecastCard.classList = 'secondaryCard'
 
       let dailyName = document.createElement('h2')
       dailyName.textContent = name 
