@@ -11,41 +11,61 @@
       rel="stylesheet"
     />
     <link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.8/dist/css/uikit.min.css" />
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.15.8/dist/css/uikit.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
     <title>Weather App</title>
   </head>
   <body>
-    <h1 id="header" class="uk-container-expand">Weather App
-    <input id="citySearch" name="state" type="text" autofocus="true" placeholder="location" class="citySearch"/> 
-       <div class=" searchBtn">
-        <button type="button" id="btn" class="btn btn-outline-primary">Find</button>
+    <h1 id="header">
+      Weather App
+      <div>
+        <input
+        id="citySearch"
+          name="state"
+          type="text"
+          autofocus="true"
+          placeholder="location"
+          class="citySearch"
+        />
+      </div>
+
+      <div class="searchBtn">
+        <button type="button" id="btn" class="btn btn-outline-primary">
+          Find
+        </button>
       </div>
     </h1>
 
     <div>
       <h2 class="primarySection"><strong>Weather</strong></h2>
-      <div class="card" id="primaryCard"> 
-        <section class="container" >
-         <div id="displayWeather"></div>
-       </section>
-       </div>
+      <div class="card" id="primaryCard">
+        <section class="container">
+          <div id="displayWeather"></div>
+        </section>
+      </div>
 
-       <div>
+      <div>
         <h2 class="primarySection"><strong>Weather Forecast:</strong></h2>
-        <div id="dailyForecast"  class="secondarySection uk-flex uk-flex-center uk-grid-small" uk-grid></div>
-       </div>
+        <div
+          id="dailyForecast"
+          class="secondarySection uk-flex uk-grid-small"
+          uk-grid
+        ></div>
+      </div>
     </div>
-    
+
     <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit-icons.min.js"></script>
     <script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
-></script>
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
+    ></script>
   </body>
 </html>
