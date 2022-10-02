@@ -9,7 +9,7 @@ let searchLocationHandler = function (event) {
   let city = cityNameEl.value.trim;
   if (city) {
     getWeatherRepo(city);
-    cityNameEl.value = " ";
+    cityNameEl.value.trim = " ";
   } else {
     wiindow.alert("Please enter valid Location.");
   }
@@ -78,7 +78,7 @@ function displayWeather(data, name) {
     let windSpeed = document.createElement('p');
     windSpeed.textContent = `Windspeed: ${data.current.wind_speed}/mph`
     
-    for(let i = 0; i < data.daily.length; i++){
+    for(let i = 1; i < data.daily.length; i++){
 
       let forecastCard = document.createElement('div')
       forecastCard.classList = 'secondaryCard'
