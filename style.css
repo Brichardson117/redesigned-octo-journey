@@ -31,11 +31,10 @@
 .secondarySection {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  list-style: none;
   padding: 15px;
-  position: relative;
+ 
 }
 
 .card {
@@ -66,7 +65,7 @@
   padding: 40px 10%;
   border-radius: 20px;
   border: 3px solid red;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 480px) {
