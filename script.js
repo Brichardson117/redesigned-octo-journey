@@ -13,7 +13,6 @@ let searchLocationHandler = function (event) {
   } else {
     wiindow.alert("Please enter valid Location.");
   }
-  
 };
 
 //function fot the api call to get the weather for users given location
@@ -34,8 +33,7 @@ let getWeatherRepo = function (lat, lon, name) {
 //function for api call to get lat, log, and data from users given location
 function apiCall() {
   const cityInputEl = document.querySelector("#citySearch");
-  const baseUrl =
-    `http://api.openweathermap.org/geo/1.0/direct?q=${cityInputEl.value}&limit=5&appid=9d0b4962f3190a47703e718c0e6b86a0`;
+  const baseUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityInputEl.value}&limit=5&appid=9d0b4962f3190a47703e718c0e6b86a0`;
   fetch(baseUrl)
     .then(function (response) {
       return response.json();
@@ -49,71 +47,78 @@ function apiCall() {
 
 //function to display weather information for current weather
 function displayWeather(data, name) {
-    //create element for city name and assign text content and class element
-    let cityName = document.createElement('h2');
-    cityName.textContent = name;
-    // cityName.classList = 'mb-0'
+  //create element for city name and assign text content and class element
 
-    //create element for temperate and assign text content and class element
-    let temperature = document.createElement('p');
-    temperature.textContent = `Temp: ${data.current.temp} °F`;
-    // temperature.classList = 'display-2 my-3'
+  let primaryDiv = document.createElement("div");
+  primaryDiv.classList = "primaryCard";
 
-    //create element for weather imageand assign text content and class element
-    let weatherImg = document.createElement('img');
-    weatherImg.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`
-    weatherImg.classList = 'width:100%'
-    weatherImg.alt = 'weather image'
+  let cityName = document.createElement("h2");
+  cityName.textContent = name;
 
-    //create element for humidity and assign text content and class element
-    let humidity = document.createElement('p')
-    humidity.textContent = `Humidity: ${data.current.humidity}%`
-    // humidity.classList = 'mb-2'
+  //create element for temperate and assign text content and class element
+  let temperature = document.createElement("p");
+  temperature.textContent = `Temp: ${data.current.temp} °F`;
+  // temperature.classList = 'display-2 my-3'
 
-    //create element for uv and assign text content and class element
-    let uv = document.createElement('p')
-    uv.textContent = `Uv Index: ${data.current.uvi}`;
+  //create element for weather imageand assign text content and class element
+  let weatherImg = document.createElement("img");
+  weatherImg.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`;
+  weatherImg.classList = "width:100%";
+  weatherImg.alt = "weather image";
 
-    //create element for wind speen and assign text content and class element
-    let windSpeed = document.createElement('p');
-    windSpeed.textContent = `Windspeed: ${data.current.wind_speed}/mph`
-    
-    for(let i = 0; i < data.daily.length; i++){
+  //create element for humidity and assign text content and class element
+  let humidity = document.createElement("p");
+  humidity.textContent = `Humidity: ${data.current.humidity}%`;
+  // humidity.classList = 'mb-2'
 
-      let forecastCard = document.createElement('div')
-      forecastCard.classList = 'secondaryCard col'
+  //create element for uv and assign text content and class element
+  let uv = document.createElement("p");
+  uv.textContent = `Uv Index: ${data.current.uvi}`;
 
-      let dailyName = document.createElement('h2')
-      dailyName.textContent = name 
-      // dailyName.classList = 'card'
+  //create element for wind speen and assign text content and class element
+  let windSpeed = document.createElement("p");
+  windSpeed.textContent = `Windspeed: ${data.current.wind_speed}/mph`;
 
-      let dailyTemp = document.createElement('p');
-      dailyTemp.textContent = `Temp: ${data.daily[i].temp.day} °F`
+  for (let i = 0; i < data.daily.length; i++) {
+    let forecastCard = document.createElement("div");
+    forecastCard.classList = "secondaryCard col";
 
-      let dailyImg = document.createElement('img');
-      dailyImg.src = `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png`
+    let dailyName = document.createElement("h2");
+    dailyName.textContent = name;
+    // dailyName.classList = 'card'
 
-      let dailyHumidity = document.createElement('p');
-      dailyHumidity.textContent = ` Humidity: ${data.daily[i].humidity}%`
+    let dailyTemp = document.createElement("p");
+    dailyTemp.textContent = `Temp: ${data.daily[i].temp.day} °F`;
 
-      let dailyUV = document.createElement('p');
-      dailyUV.textContent = `UV Index: ${data.daily[i].uvi}`
+    let dailyImg = document.createElement("img");
+    dailyImg.src = `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png`;
 
-      let dailyWindspeed = document.createElement('p');
-      dailyWindspeed.textContent = `Windspeed: ${data.daily[i].wind_speed}/mph`
+    let dailyHumidity = document.createElement("p");
+    dailyHumidity.textContent = ` Humidity: ${data.daily[i].humidity}%`;
 
-      forecastCard.append(dailyName, dailyImg, dailyTemp, dailyHumidity, dailyUV, dailyWindspeed)
+    let dailyUV = document.createElement("p");
+    dailyUV.textContent = `UV Index: ${data.daily[i].uvi}`;
 
-      document.querySelector('#dailyForecast').append(forecastCard);
-    }
+    let dailyWindspeed = document.createElement("p");
+    dailyWindspeed.textContent = `Windspeed: ${data.daily[i].wind_speed}/mph`;
 
-    //append created elements to html 
-    document.querySelector('#displayWeather').append(weatherImg, cityName, temperature, humidity, uv, windSpeed)
+    forecastCard.append(
+      dailyName,
+      dailyImg,
+      dailyTemp,
+      dailyHumidity,
+      dailyUV,
+      dailyWindspeed
+    );
 
-   
+    document.querySelector("#dailyForecast").append(forecastCard);
+  }
+
+  //append created elements to html
+
+  primaryDiv.append(weatherImg, cityName, temperature, humidity, uv, windSpeed);
+  document.querySelector("#displayWeather").append(primaryDiv);
 }
-
-
 
 //event listener, runs function apiCall on 'click'
 searchBtn.addEventListener("click", apiCall);

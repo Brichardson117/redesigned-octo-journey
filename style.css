@@ -52,7 +52,7 @@
   padding: 2px 16px;
 }
 
-#primaryCard {
+.primaryCard {
   margin: auto;
   width: 50%;
   border: 3px solid green;
