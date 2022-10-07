@@ -77,7 +77,7 @@ function displayWeather(data, name) {
 
   //create element for wind speen and assign text content and class element
   let windSpeed = document.createElement("p");
-  windSpeed.textContent = `Windspeed: ${data.current.wind_speed}/mph`;
+  windSpeed.textContent = `Windspeed: ${data.current.wind_speed}mph`;
 
   for (let i = 0; i < data.daily.length; i++) {
     let forecastCard = document.createElement("div");
@@ -100,7 +100,7 @@ function displayWeather(data, name) {
     dailyUV.textContent = `UV Index: ${data.daily[i].uvi}`;
 
     let dailyWindspeed = document.createElement("p");
-    dailyWindspeed.textContent = `Windspeed: ${data.daily[i].wind_speed}/mph`;
+    dailyWindspeed.textContent = `Windspeed: ${data.daily[i].wind_speed}mph`;
 
     forecastCard.append(
       dailyName,
