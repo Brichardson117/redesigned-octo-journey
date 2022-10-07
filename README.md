@@ -27,7 +27,9 @@ HTML, CSS, JavaScript, OpenWeather API
 
 ## Picture of Website
 
+## Images of Website
 
+<img width="2240" alt="Screen Shot 2022-10-07 at 2 21 54 PM" src="https://user-images.githubusercontent.com/97998857/194638499-4d7d3ab4-23de-4080-ae9e-5b6f296b464b.png">
 
 
 ## Repositories
