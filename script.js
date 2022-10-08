@@ -50,7 +50,17 @@ function displayWeather(data, name) {
   //create element for city name and assign text content and class element
 
   let primaryDiv = document.createElement("div");
-  primaryDiv.classList = "primaryCard";
+  if(data.current.weather[0].main === 'Clear'){
+      primaryDiv.classList = "primaryCard sunny";
+  } else if(data.current.weather[0].main === 'Clouds'){
+    primaryDiv.classList = "primaryCard cloudy";
+  } else if(data.current.weather[0].main === 'Rain'){
+    primaryDiv.classList = "primaryCard rain";
+  } else if(data.current.weather[0].main === 'Snow') {
+    primaryDiv.classList = "primaryCard snow";
+  }
+
+
 
   let cityName = document.createElement("h2");
   cityName.textContent = name;
@@ -117,7 +127,7 @@ function displayWeather(data, name) {
 
   //append created elements to html
 
-  primaryDiv.append(backgroundImg,weatherImg, cityName, temperature, humidity, uv, windSpeed,);
+  primaryDiv.append(weatherImg, cityName, temperature, humidity, uv, windSpeed,);
   document.querySelector("#displayWeather").append(primaryDiv);
 }
 
