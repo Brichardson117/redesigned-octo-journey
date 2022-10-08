@@ -70,16 +70,18 @@
 
 
 .snow{
-  background-image: url(images/snowy.jpg);
+  background-image: url(images/Gifs/snow.jpg);
 }
 .rain{
-  background-image: url(images/rain.webp);
+  background-image: url(images/Gifs/rain.gif);
+  color: white;
 }
 .sunny{
-  background-image: url(images/sunny.jpg);
+  background-image: url(images/Gifs/sunny.gif);
 }
 .cloudy{
-  background-image: url(images/cloudy.jpg);
+  background-image: url(images/Gifs/cloudy.gif);
+  color: white;
 }
 
 @media screen and (max-width: 480px) {
