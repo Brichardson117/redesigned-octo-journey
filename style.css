@@ -68,6 +68,20 @@
   justify-content: space-between;
 }
 
+
+.snow{
+  background-image: url(images/snowy.jpg);
+}
+.rain{
+  background-image: url(images/rain.webp);
+}
+.sunny{
+  background-image: url(images/sunny.jpg);
+}
+.cloudy{
+  background-image: url(images/cloudy.jpg);
+}
+
 @media screen and (max-width: 480px) {
   .citySearch {
     justify-content: baseline;

@@ -79,10 +79,6 @@ function displayWeather(data, name) {
   let windSpeed = document.createElement("p");
   windSpeed.textContent = `Windspeed: ${data.current.wind_speed}mph`;
 
-  if(data.current.weather.description === 'clear sky'){
-    let backgroundImg = document.createElement('img')
-    backgroundImg.style.backgroundImage =`images/sunny.jpg`
-  }
 
   for (let i = 0; i < data.daily.length; i++) {
     let forecastCard = document.createElement("div");
@@ -121,7 +117,7 @@ function displayWeather(data, name) {
 
   //append created elements to html
 
-  primaryDiv.append(weatherImg, cityName, temperature, humidity, uv, windSpeed,);
+  primaryDiv.append(backgroundImg,weatherImg, cityName, temperature, humidity, uv, windSpeed,);
   document.querySelector("#displayWeather").append(primaryDiv);
 }
 
