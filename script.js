@@ -32,7 +32,7 @@ let getWeatherRepo = function (lat, lon, name) {
 //function for api call to get lat, log, and data from users given location
 function apiCall() {
   const cityInputEl = document.querySelector("#citySearch");
-  const baseUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityInputEl.value}&limit=5&appid=9d0b4962f3190a47703e718c0e6b86a0`;
+  const baseUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInputEl.value}&limit=5&appid=9d0b4962f3190a47703e718c0e6b86a0`;
   fetch(baseUrl)
     .then(function (response) {
       return response.json();
