@@ -52,7 +52,7 @@ function displayWeather(data, name) {
   if(data.current.weather[0].main === 'Clear'){
       primaryDiv.classList = "primaryCard sunny";
   } else if(data.current.weather[0].main === 'Clouds'){
-    primaryDiv.classList = "primaryCard snow";
+    primaryDiv.classList = "primaryCard cloudy";
   } else if(data.current.weather[0].main === 'Rain'){
     primaryDiv.classList = "primaryCard rain";
   } else if(data.current.weather[0].main === 'Snow') {
