@@ -70,7 +70,8 @@
 
 
 .snow{
-  background-image: url(images/Gifs/snow.jpg);
+  background-image: url(images/Gifs/snow.gif);
+  color: white;
 }
 .rain{
   background-image: url(images/Gifs/rain.gif);

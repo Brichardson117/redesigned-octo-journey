@@ -1,6 +1,5 @@
 let searchBtn = document.querySelector("#btn");
 let cityNameEl = document.querySelector("#state");
-let cityName = " ";
 
 //function to get user input
 let searchLocationHandler = function (event) {
@@ -9,7 +8,7 @@ let searchLocationHandler = function (event) {
   let city = cityNameEl.value.trim;
   if (city) {
     getWeatherRepo(city);
-    cityNameEl.value.trim = " ";
+    cityNameEl.value = " ";
   } else {
     wiindow.alert("Please enter valid Location.");
   }
@@ -53,7 +52,7 @@ function displayWeather(data, name) {
   if(data.current.weather[0].main === 'Clear'){
       primaryDiv.classList = "primaryCard sunny";
   } else if(data.current.weather[0].main === 'Clouds'){
-    primaryDiv.classList = "primaryCard cloudy";
+    primaryDiv.classList = "primaryCard snow";
   } else if(data.current.weather[0].main === 'Rain'){
     primaryDiv.classList = "primaryCard rain";
   } else if(data.current.weather[0].main === 'Snow') {
