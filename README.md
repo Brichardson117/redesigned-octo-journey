@@ -33,5 +33,5 @@ HTML, CSS, JavaScript, OpenWeather API
 
 
 ## Repositories
-https://github.com/IanSky1/Global-Tech-Nomad
+https://github.com/Brichardson117/redesigned-octo-journey
 
