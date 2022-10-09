@@ -8,7 +8,7 @@ let searchLocationHandler = function (event) {
   let city = cityNameEl.value.trim;
   if (city) {
     getWeatherRepo(city);
-    cityNameEl.value = " ";
+    cityNameEl.value.trim = " ";
   } else {
     wiindow.alert("Please enter valid Location.");
   }
